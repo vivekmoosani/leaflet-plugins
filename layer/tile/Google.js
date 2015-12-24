@@ -7,7 +7,7 @@
 var leaflet;
 
 if (typeof module !== 'undefined' && module.exports) {
-    leaflet = require('L');
+    leaflet = require('leaflet');
 }
 else {
     leaflet = L;
