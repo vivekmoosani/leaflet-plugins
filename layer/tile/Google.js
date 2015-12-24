@@ -4,13 +4,13 @@
 
 /* global google: true */
 (function() {
-var leaflet;
+var Leaflet;
 
 if (typeof module !== 'undefined' && module.exports) {
-    leaflet = require('leaflet');
+    Leaflet = require('leaflet');
 }
 else {
-    leaflet = L;
+    Leaflet = L;
 }
 Leaflet.Google = Leaflet.Class.extend({
 	includes: Leaflet.Mixin.Events,
