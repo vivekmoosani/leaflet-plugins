@@ -1,3 +1,9 @@
+This project is a fork of https://github.com/shramov/leaflet-plugins
+The reason for the fork is to be able to import the project in node/browserify builds.
+
+STATUS: WIP.
+
+As of now only tile/layer/Google.js has been modified to not use global L object and instead require('leaflet')
 
 Leaflet plugins
 ============
