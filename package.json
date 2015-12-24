@@ -1,8 +1,8 @@
 {
   "author": "Pavel Shramov",
   "name": "leaflet-plugins-nodified",
-  "version": "1.4.2",
-  "description": "This is a fork of https://github.com/shramov/leaflet-plugins. Miscellaneous plugins for Leaflet library for services that need to display route information and need satellite imagery from different providers",
+  "version": "0.0.1",
+  "description": "This is a fork of https://github.com/shramov/leaflet-plugins and corresponds to v1.4.2. Miscellaneous plugins for Leaflet library for services that need to display route information and need satellite imagery from different providers",
   "license": "MIT",
   "repository": {
     "type": "git",
