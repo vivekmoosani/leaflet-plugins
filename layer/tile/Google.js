@@ -3,9 +3,17 @@
  */
 
 /* global google: true */
+(function() {
+var leaflet;
 
-L.Google = L.Class.extend({
-	includes: L.Mixin.Events,
+if (typeof module !== 'undefined' && module.exports) {
+    leaflet = require('L');
+}
+else {
+    leaflet = L;
+}
+Leaflet.Google = Leaflet.Class.extend({
+	includes: Leaflet.Mixin.Events,
 
 	options: {
 		minZoom: 0,
@@ -24,10 +32,10 @@ L.Google = L.Class.extend({
 
 	// Possible types: SATELLITE, ROADMAP, HYBRID, TERRAIN
 	initialize: function(type, options) {
-		L.Util.setOptions(this, options);
+		Leaflet.Util.setOptions(this, options);
 
 		this._ready = google.maps.Map !== undefined;
-		if (!this._ready) L.Google.asyncWait.push(this);
+		if (!this._ready) Leaflet.Google.asyncWait.push(this);
 
 		this._type = type || 'SATELLITE';
 	},
@@ -43,7 +51,7 @@ L.Google = L.Class.extend({
 		// set up events
 		map.on('viewreset', this._resetCallback, this);
 
-		this._limitedUpdate = L.Util.limitExecByInterval(this._update, 150, this);
+		this._limitedUpdate = Leaflet.Util.limitExecByInterval(this._update, 150, this);
 		map.on('move', this._update, this);
 
 		map.on('zoomanim', this._handleZoomAnim, this);
@@ -74,7 +82,7 @@ L.Google = L.Class.extend({
 	setOpacity: function(opacity) {
 		this.options.opacity = opacity;
 		if (opacity < 1) {
-			L.DomUtil.setOpacity(this._container, opacity);
+			Leaflet.DomUtil.setOpacity(this._container, opacity);
 		}
 	},
 
@@ -88,8 +96,8 @@ L.Google = L.Class.extend({
 			first = tilePane.firstChild;
 
 		if (!this._container) {
-			this._container = L.DomUtil.create('div', 'leaflet-google-layer leaflet-top leaflet-left');
-			this._container.id = '_GMapContainer_' + L.Util.stamp(this);
+			this._container = Leaflet.DomUtil.create('div', 'leaflet-google-layer leaflet-top leaflet-left');
+			this._container.id = '_GMapContainer_' + Leaflet.Util.stamp(this);
 			this._container.style.zIndex = 'auto';
 		}
 
@@ -187,16 +195,18 @@ L.Google = L.Class.extend({
 	}
 });
 
-L.Google.asyncWait = [];
-L.Google.asyncInitialize = function() {
+Leaflet.Google.asyncWait = [];
+Leaflet.Google.asyncInitialize = function() {
 	var i;
-	for (i = 0; i < L.Google.asyncWait.length; i++) {
-		var o = L.Google.asyncWait[i];
+	for (i = 0; i < Leaflet.Google.asyncWait.length; i++) {
+		var o = Leaflet.Google.asyncWait[i];
 		o._ready = true;
 		if (o._container) {
 			o._initMapObject();
 			o._update();
 		}
 	}
-	L.Google.asyncWait = [];
+	Leaflet.Google.asyncWait = [];
 };
+
+})();

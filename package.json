@@ -26,5 +26,8 @@
     "yandex",
     "kml",
     "gpx"
-  ]
+  ],
+  "dependencies": {
+    "leaflet": "^0.7.7"
+  }
 }
