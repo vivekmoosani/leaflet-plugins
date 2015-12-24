@@ -1,12 +1,12 @@
 {
   "author": "Pavel Shramov",
-  "name": "leaflet-plugins",
+  "name": "leaflet-plugins-nodified",
   "version": "1.4.2",
-  "description": "Miscellaneous plugins for Leaflet library for services that need to display route information and need satellite imagery from different providers",
+  "description": "This is a fork of https://github.com/shramov/leaflet-plugins. Miscellaneous plugins for Leaflet library for services that need to display route information and need satellite imagery from different providers",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:shramov/leaflet-plugins.git"
+    "url": "git@github.com:vivekmoosani/leaflet-plugins-nodified.git"
   },
   "scripts": {
     "test": "jshint control/* layer/*"
@@ -15,7 +15,8 @@
     "jshint": "2.5.0"
   },
   "contributors": [
-    "Bruno Bergot <bruno@eliaz.fr>"
+    "Bruno Bergot <bruno@eliaz.fr>",
+    "Vivek M <vivekmoosani@gmail.com>"
   ],
   "keywords": [
     "leaflet",
