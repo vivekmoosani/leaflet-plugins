@@ -5,6 +5,12 @@ STATUS: WIP.
 
 As of now only tile/layer/Google.js has been modified to not use global L object and instead require('leaflet')
 
+The modified version is published as leaflet-plugins-nodified to npm
+https://www.npmjs.com/package/leaflet-plugins-nodified
+
+Original README.md as is below.
+
+
 Leaflet plugins
 ============
 
